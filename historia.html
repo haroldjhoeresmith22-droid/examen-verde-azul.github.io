@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen de asenso verde-azul</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Fondo principal con imagen */
+    .fondo-principal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 600px;
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-image: url('TU_IMAGEN.jpg');
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    /* ✅ Sidebar con degradado oscuro + textura + fusión */
+    .sidebar {
+      height: 100vh;
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      background:
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
+        linear-gradient(to bottom,
+          #00335c 0%,
+          #004d73 35%,
+          #1a6640 65%,
+          #0f4d1f 100%
+        );
+
+      background-blend-mode: overlay;
+
+      padding-top: 20px;
+      transform: translateX(-220px);
+      animation: slideIn 0.8s forwards;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-220px); }
+      to { transform: translateX(0); }
+    }
+
+    .sidebar.oculta {
+      animation: slideOut 0.8s forwards;
+    }
+
+    @keyframes slideOut {
+      from { transform: translateX(0); }
+      to { transform: translateX(-220px); }
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(0,0,0,0.2);
+    }
+
+    /* ✅ Contenido centrado */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      color: white;
+      text-shadow: 0 0 5px black;
+      text-align: center;
+    }
+
+    /* ✅ Botón reactivo */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: #0f4d1f;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+      z-index: 10;
+    }
+
+    .toggle-btn.cerrado {
+      background: #00335c;
+    }
+
+    .toggle-btn:hover {
+      filter: brightness(1.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="fondo-principal"></div>
+
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Introduccion</a>
+    <a href="historia.html">Cuestionario historia</a>
+    <a href="tecnica.html">Cuestionario Tecnica</a>
+    <a href="poomsae.html">Cuestionario Poomsae</a>
+    <a href="terminologia.html">Cuestionario Terminologia</a>
+    <a href="#contacto">Tareas de Preparacion</a>
+  </div>
+
+  <div class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">☰</div>
+
+  <div class="content">
+    <h1 id="preguntas Parte 1 (Historia)">Preguntas Parte 1 (Historia)</h1>
+
+    <h1>1) ¿Qué son los Hwarang y por qué son importantes?</h1>
+
+    <p>
+      R = Los Hwarang o también conocidos como "los guerreros flor" pertenecían a Silla, un antiguo reino de Koryo (Corea). 
+      Estos eran entrenados en artes marciales, filosofía, literatura, estrategia, música, estrategia militar y principios éticos. 
+      La educación de los Hwarang se basaba en el Hwarangdo, un código de lealtad, valentía y respeto hacia la comunidad.
+      Gracias a su disciplina, los Hwarang lograron vencer a los otros dos reinos de Koryo (Corea), estos siendo Koguryo y Baekje. 
+      Dejaron un legado de honor, belleza y disciplina, representando el equilibrio entre fuerza, sabiduría y virtud.
+    </p>
+
+    <a href="https://youtu.be/NIwJPTeRRrA?si=kE_f0Ozfz3AFm8cI" target="_blank"> Ver video sobre los Hwarang </a>
+    <h1> 2) Cuales fueron algunos de los kwan originales </h1>
+    <p> Chung Do Kwan: Este fue fundado en 1944 por el maestro Lee Won Kuk fue el primer dojang de Taekwondo en Corea, este siendo influenciado por el Karate Shotokan y el Taekkyon </p>
+     <img src="https://uscdka.com/wp-content/uploads/2023/01/TKDCDK-Logo.png" alt="cinturon azul" widht="100" height="200">
+    <p> Ji do Kwan: fue fundado en 1946 por el maestro Chung Sang Sup, este se enfocaba en el combate libre, influenciado por el karate shotokan </p>
+     <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_jidokwan.png" alt="cinturon azul" widht="100" height="200">
+     <p> Moo Duk Kwan: fue fundado en 1946 por el maestro Hwnag Kea, este estuvo bajo el nombre de "escuela de las virtudes marciales </p> 
+     <img src="https://static.wixstatic.com/media/26cacd_ce1d364686f343668fc0ac23032dc7d0~mv2.png" alt="cinturon azul" widht="100" height="200">
+     <p> Song Moo Kwan: Fue fundado en 1944/1946 por el maestro Ro Byung Jicken, este tenia un estilo marcado por el karate </p>
+     <img src="https://www.white-tiger-martialarts.com/wp-content/uploads/SMK-PSR-2022.png?w=640" alt="cinturon azul" widht="100" height="200"> 
+     <p> Chang Moo Kwan: Fundado en 1946 por el maestro Yun Byeong-In, este se centraba en el desarollo marcial combinando karate shotokan y Quan Fa Chino </p>
+     
+<img src="https://taekwondocmk.com.br/wp-content/uploads/2021/10/old-cmk-4-1.png" alt="cinturon azul" widht="100" height="200">
+     
+<a href="https://youtu.be/B3OPRPdmgI0?si=d13JefCMQcxaQsfV" target="_blank"> video de los kwan </a>
+     <h1> 3) ¿Que es el Kukkiwon y cual es su funcion? </h1> 
+     <p> R=La kukkiwon o tambien comocida como "world Taekwondo headquarters" es la sede mundial de Taekwondo, esta se creo entre el año 1972 y 1973 esta se encargo de desarrollar y promover el Taekwondo como arte marcial, emitar certificaciones de grados siendo los danes (cinturones negro de primero a decimo dan) y los gups (cinturones de colores desde el blanco decimo gup hasta el rojo franja negra primer gup), la kukkiwon forma instructores a traves de su academia mundial de taekwondo </p>
+     <a href="https://youtu.be/9eMsMLKaOw8?si=Z7eQi3f0CcLLzFFi" target="_blank"> video de la kukkiwon </a>
+     <img src="https://img1.wsimg.com/isteam/ip/2bf74e36-34ff-4f45-8394-327de8d19b2a/kukki-2021.png" alt="cinturon azul" widht="100" height="200">
+
+    
+
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const btn = document.getElementById("toggleBtn");
+
+      sidebar.classList.toggle("oculta");
+      btn.classList.toggle("cerrado");
+    }
+  </script>
+
+</body>
+</html>

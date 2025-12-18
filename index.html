@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen de asenso verde-azul</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Fondo principal con imagen */
+    .fondo-principal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 600px;
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-image: url('TU_IMAGEN.jpg');
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    /* ✅ Sidebar con degradado oscuro + textura + fusión */
+    .sidebar {
+      height: 100vh;
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      background:
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
+        linear-gradient(to bottom,
+          #00335c 0%,     /* azul oscuro visible */
+          #004d73 35%,    /* transición azul → mezcla */
+          #1a6640 65%,    /* mezcla más clara */
+          #0f4d1f 100%    /* verde oscuro visible */
+        );
+
+      background-blend-mode: overlay;
+
+      padding-top: 20px;
+      transform: translateX(-220px);
+      animation: slideIn 0.8s forwards;
+    }
+
+    /* Animación de entrada */
+    @keyframes slideIn {
+      from { transform: translateX(-220px); }
+      to { transform: translateX(0); }
+    }
+
+    /* Animación de salida */
+    .sidebar.oculta {
+      animation: slideOut 0.8s forwards;
+    }
+
+    @keyframes slideOut {
+      from { transform: translateX(0); }
+      to { transform: translateX(-220px); }
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(0,0,0,0.2);
+    }
+
+    /* ✅ Contenido centrado */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      color: white;
+      text-shadow: 0 0 5px black;
+      text-align: center;
+    }
+
+    /* ✅ Botón reactivo (verde = abierto, azul = cerrado) */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: #0f4d1f; /* verde oscuro (sidebar abierta) */
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+      z-index: 10;
+    }
+
+    /* ✅ Cuando la sidebar está cerrada → botón azul */
+    .toggle-btn.cerrado {
+      background: #00335c; /* azul oscuro */
+    }
+
+    .toggle-btn:hover {
+      filter: brightness(1.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Imagen de fondo -->
+  <div class="fondo-principal"></div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Introduccion</a>
+    <a href="historia.html">Cuestionario historia</a>
+    <a href="tecnica.html">Cuestionario Tecnica</a>
+    <a href="poomsae.html">Cuestionario Poomsae</a>
+    <a href="#contacto">Cuestionario Terminologia</a>
+    <a href="#contacto">Tareas de Preparacion</a>
+  </div>
+  <!-- Botón para ocultar/mostrar -->
+  <div class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">☰</div>
+
+  <!-- Contenido -->
+  <div class="content">
+    <h1 id="Introduccion">Introduccion</h1>
+    <p>El cinturon azul representa el cielo, un nivel donde las tecnicas alcanzan mayor calidad, control y potencia, Aqui se espera que el estudiante demuestre madurez marcial, precision y mayor responsabilidad dentro del dojang.</p>
+     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/World_or_International_Taekwondo_Blue_belt.png" alt="cinturon azul" widht="300" height="200">
+     <h1> Contenidos Obligatorios </h1>
+     <h2> A. Historia del taekwondo (nivel avanzado medio) </h2>
+     <h3> El estudiante debe dominar: </h3>
+<p> 1) Fundadores de las artes marciales corenas (hwrang, tekkyon)</p>
+       <img src="https://ich.unesco.org/img/photo/thumb/07562-BIG.jpg" alt="cinturon azul" widht="100" height="200">
+     <p> 2) evolucion de los 9 kwan principales y su importancia historica </p>
+       <img src="https://www.mastkd.com/wp-content/uploads/2024/12/KUAN.jpeg" alt="kwanes" widht="100" height="200">
+     <p> 3) Fundacion del kukkiwon como sede mundial del taekwondo moderno (seul, corea del sur) </p>
+       <img src="https://img1.wsimg.com/isteam/ip/2bf74e36-34ff-4f45-8394-327de8d19b2a/kukki-2021.png" alt="kwanes" widht="100" height="200">
+     <p> 4) Diferencias entre Poomsae, Kyorugi (combate) y Kyopa (rompimiento) </p>
+     <img src="https://www.mastkd.com/wp-content/uploads/2015/10/20151006x_Taekwondo-Poomsae_home.jpg" alt="kwanes" widht="100" height="200">
+     <img src="https://journey.app/blog/wp-content/uploads/2021/12/taekwondo_area_de_combate.jpg" alt="kwanes" widht="100" height="200">
+     <img src="https://taekwondonamkunrivas.wordpress.com/wp-content/uploads/2017/10/kyu_hyung_lee_breaking.jpg?w=685" alt="kwanes" widht="100" height="200">
+     <h2> B) Tecnicas que debe dominar ></h2>
+     <h3> 1.Posiciones (sogui)-Nivel avanzado </h3>
+     <p> Beom Sogui (posicion del tigre) </p>
+     <p> Koa Sogui (posicion Cruzada) </p>
+     <p> Hakdari Sogui (posicion de grulla) </p>
+     <h3> 2.Bloqueos (makki) </h3>
+     <p> Gaemgang makki (bloqueo diamante) </p>
+     <p> Goduro Makki (bloqueo reforzado) </p>
+     <p> Sonnal bakkat Makki (bloqueo lateral con mano de cuchillo) </p> 
+     <h3> Patadas (Chagui)-Requeridas para azul </h3>
+     <p> Dwichuk dwit chagui (patada atras con borde del talon) </p>
+     <p> Neryo chagui (Patada descendente) </p>
+     <p> Bituro Chagui (Patada rotada) </p>
+     <p> Dollyo y Yop chagui a alturas medias y altas </p> 
+     <p> Combinaciones dobles (doble ap chagui, doble dollyo) </p> 
+    
+
+
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const btn = document.getElementById("toggleBtn");
+
+      sidebar.classList.toggle("oculta");
+      btn.classList.toggle("cerrado");
+    }
+  </script>
+
+</body>
+</html>
+
+
+
